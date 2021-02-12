@@ -8,10 +8,15 @@
 import UIKit
 
 class TableViewController: UITableViewController {
+    
+    var information: [DataElement] = []
+    var order: [String] = []
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        loadInformation {
+        loadInformation { information in
+            self.information = information?.data ?? []
+            self.order = information?.view ?? []
             DispatchQueue.main.async {
                 self.tableView.reloadData()
             }
@@ -20,72 +25,35 @@ class TableViewController: UITableViewController {
 
     // MARK: - Table view data source
 
-    override func numberOfSections(in tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
-        return 1
-    }
-
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
-        return information.count
+        return order.count
     }
-
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
-
-        let informations = information[indexPath.row]
-        
-        cell.textLabel?.text = informations.name
-        cell.detailTextLabel?.text = informations.data
-
+        cell.textLabel?.text = order[indexPath.row]
+        cell.detailTextLabel?.text = nil
         return cell
     }
     
-
-    /*
-    // Override to support conditional editing of the table view.
-    override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the specified item to be editable.
-        return true
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
+        guard let index = information.firstIndex(where: { $0.name == order[indexPath.row] }) else {
+            return
+        }
+        let selectedObject = information[index]
+        showAlert(type: selectedObject.name, text: selectedObject.data.text ?? "", url: selectedObject.data.url ?? "", selectedID: selectedObject.data.selectedID ?? 0)
     }
-    */
-
-    /*
-    // Override to support editing the table view.
-    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
-        if editingStyle == .delete {
-            // Delete the row from the data source
-            tableView.deleteRows(at: [indexPath], with: .fade)
-        } else if editingStyle == .insert {
-            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-        }    
+    
+    override func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
+        return UIView()
     }
-    */
-
-    /*
-    // Override to support rearranging the table view.
-    override func tableView(_ tableView: UITableView, moveRowAt fromIndexPath: IndexPath, to: IndexPath) {
-
+    
+    func showAlert(type: String, text: String, url: String, selectedID: Int) {
+        let alert = UIAlertController(title: type, message: "text: \(text)\nurl: \(url)\nselectedID: \(selectedID)", preferredStyle: UIAlertController.Style.alert)
+        alert.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: nil))
+        parent?.present(alert, animated: true, completion: nil)
     }
-    */
 
-    /*
-    // Override to support conditional rearranging of the table view.
-    override func tableView(_ tableView: UITableView, canMoveRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the item to be re-orderable.
-        return true
-    }
-    */
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }

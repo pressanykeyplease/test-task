@@ -7,17 +7,18 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2342C0C725D6C354002B6B93 /* Information.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2342C0C625D6C354002B6B93 /* Information.swift */; };
 		A5D0700A25D5B6E700F353E8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5D0700925D5B6E700F353E8 /* AppDelegate.swift */; };
 		A5D0700C25D5B6E700F353E8 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5D0700B25D5B6E700F353E8 /* SceneDelegate.swift */; };
 		A5D0701125D5B6E700F353E8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A5D0700F25D5B6E700F353E8 /* Main.storyboard */; };
 		A5D0701325D5B6EB00F353E8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A5D0701225D5B6EB00F353E8 /* Assets.xcassets */; };
 		A5D0701625D5B6EB00F353E8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A5D0701425D5B6EB00F353E8 /* LaunchScreen.storyboard */; };
-		A5D0702025D5BA4A00F353E8 /* Information.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5D0701F25D5BA4A00F353E8 /* Information.swift */; };
 		A5D0702425D5BC5600F353E8 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5D0702325D5BC5600F353E8 /* Model.swift */; };
 		A5D0702825D692FF00F353E8 /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5D0702725D692FF00F353E8 /* TableViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		2342C0C625D6C354002B6B93 /* Information.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Information.swift; sourceTree = "<group>"; };
 		A5D0700625D5B6E700F353E8 /* TestWork.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TestWork.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A5D0700925D5B6E700F353E8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A5D0700B25D5B6E700F353E8 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -25,7 +26,6 @@
 		A5D0701225D5B6EB00F353E8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A5D0701525D5B6EB00F353E8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A5D0701725D5B6EB00F353E8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		A5D0701F25D5BA4A00F353E8 /* Information.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Information.swift; sourceTree = "<group>"; };
 		A5D0702325D5BC5600F353E8 /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
 		A5D0702725D692FF00F353E8 /* TableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -61,6 +61,7 @@
 			isa = PBXGroup;
 			children = (
 				A5D0701725D5B6EB00F353E8 /* Info.plist */,
+				2342C0C625D6C354002B6B93 /* Information.swift */,
 				A5D0701E25D5B92800F353E8 /* Model */,
 			);
 			path = TestWork;
@@ -69,7 +70,6 @@
 		A5D0701E25D5B92800F353E8 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				A5D0701F25D5BA4A00F353E8 /* Information.swift */,
 				A5D0702325D5BC5600F353E8 /* Model.swift */,
 				A5D0700925D5B6E700F353E8 /* AppDelegate.swift */,
 				A5D0700B25D5B6E700F353E8 /* SceneDelegate.swift */,
@@ -152,9 +152,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				A5D0702425D5BC5600F353E8 /* Model.swift in Sources */,
+				2342C0C725D6C354002B6B93 /* Information.swift in Sources */,
 				A5D0702825D692FF00F353E8 /* TableViewController.swift in Sources */,
 				A5D0700A25D5B6E700F353E8 /* AppDelegate.swift in Sources */,
-				A5D0702025D5BA4A00F353E8 /* Information.swift in Sources */,
 				A5D0700C25D5B6E700F353E8 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -304,6 +304,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = TestWork/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -322,6 +323,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = TestWork/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
